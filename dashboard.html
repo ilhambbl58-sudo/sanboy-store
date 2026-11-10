@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANBOY STORE - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+
+        <div class="account">
+            <div class="account-logo">
+                <span>👤</span>
+            </div>
+
+            <div>
+                <h3 id="namaUser">Memuat nama...</h3>
+                <p id="emailUser">Memuat email...</p>
+            </div>
+        </div>
+
+        <button id="menuBtn" class="menu-btn">☰</button>
+
+    </header>
+
+    <!-- MENU SAMPING -->
+    <nav id="sideMenu" class="side-menu">
+
+        <button id="closeMenu">✕</button>
+
+        <h3>MENU UTAMA</h3>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#transaksi">Transaksi</a>
+        <a href="#utang">Utang Saya</a>
+        <a href="#piutang">Piutang Saya</a>
+        <a href="#riwayat">Riwayat Transaksi</a>
+
+        <button id="logoutBtn" class="logout">
+            LOGOUT
+        </button>
+
+    </nav>
+
+    <!-- KONTEN UTAMA -->
+    <main class="container">
+
+        <h2>Dashboard Keuangan</h2>
+        <p class="subtitle">Ringkasan keuangan kamu</p>
+
+        <!-- PEMASUKAN DAN PENGELUARAN -->
+        <section class="summary-grid">
+
+            <div class="card income">
+                <span>↗</span>
+                <p>Pemasukan Cash</p>
+                <h3 id="pemasukanCash">Rp0</h3>
+            </div>
+
+            <div class="card expense">
+                <span>↘</span>
+                <p>Pengeluaran Cash</p>
+                <h3 id="pengeluaranCash">Rp0</h3>
+            </div>
+
+            <div class="card dana">
+                <span>💳</span>
+                <p>Pemasukan DANA</p>
+                <h3 id="pemasukanDana">Rp0</h3>
+            </div>
+
+            <div class="card expense">
+                <span>💸</span>
+                <p>Pengeluaran DANA</p>
+                <h3 id="pengeluaranDana">Rp0</h3>
+            </div>
+
+        </section>
+
+        <!-- TOTAL SALDO -->
+        <section class="total-saldo">
+
+            <p>TOTAL SALDO</p>
+
+            <h1 id="totalSaldo">Rp0</h1>
+
+            <div class="saldo-detail">
+                <div>
+                    <small>Saldo Cash</small>
+                    <h3 id="saldoCash">Rp0</h3>
+                </div>
+
+                <div>
+                    <small>Saldo DANA</small>
+                    <h3 id="saldoDana">Rp0</h3>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- UTANG DAN PIUTANG -->
+        <h2 class="section-title">Utang & Piutang</h2>
+
+        <section class="summary-grid">
+
+            <div class="card expense" id="utang">
+                <span>📕</span>
+                <p>Utang Saya</p>
+                <h3 id="totalUtang">Rp0</h3>
+                <small>Uang yang harus saya bayar</small>
+            </div>
+
+            <div class="card income" id="piutang">
+                <span>📗</span>
+                <p>Piutang Saya</p>
+                <h3 id="totalPiutang">Rp0</h3>
+                <small>Uang yang harus dikembalikan</small>
+            </div>
+
+        </section>
+
+        <!-- FORM TRANSAKSI -->
+        <section id="transaksi" class="panel">
+
+            <h2>Tambah Transaksi</h2>
+
+            <form id="transaksiForm">
+
+                <label>Jenis Transaksi</label>
+
+                <select id="jenisTransaksi" required>
+                    <option value="pemasukan">Pemasukan</option>
+                    <option value="pengeluaran">Pengeluaran</option>
+                </select>
+
+                <label>Metode Pembayaran</label>
+
+                <select id="metode" required>
+                    <option value="cash">Cash</option>
+                    <option value="dana">DANA</option>
+                </select>
+
+                <label>Jumlah Uang</label>
+
+                <input
+                    type="number"
+                    id="jumlah"
+                    placeholder="Contoh: 50000"
+                    min="1"
+                    required
+                >
+
+                <label>Keterangan</label>
+
+                <input
+                    type="text"
+                    id="keterangan"
+                    placeholder="Contoh: Penjualan item Roblox"
+                    required
+                >
+
+                <button type="submit" class="submit-btn">
+                    SIMPAN TRANSAKSI
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- UTANG -->
+        <section class="panel">
+
+            <h2>Catat Utang Saya</h2>
+
+            <form id="utangForm">
+             
+              <select id="metodeUtang" required>
+    <option value="cash">Cash</option>
+    <option value="dana">DANA</option>
+              </select>
+
+                <input id="namaUtang"
+                    placeholder="Nama orang yang memberi pinjaman"
+                    required>
+
+                <input id="jumlahUtang"
+                    type="number"
+                    min="1"
+                    placeholder="Jumlah utang"
+                    required>
+
+                <input id="ketUtang"
+                    placeholder="Keterangan">
+
+                <button type="submit" class="submit-btn">
+                    SIMPAN UTANG
+                </button>
+
+            </form>
+
+          <h3>Daftar Utang Saya</h3>
+<div id="daftarUtang">
+    Belum ada utang.
+</div>
+
+        </section>
+
+        <!-- PIUTANG -->
+        <section class="panel">
+
+            <h2>Catat Piutang Saya</h2>
+
+            <form id="piutangForm">
+
+              <select id="metodePiutang" required>
+    <option value="cash">Cash</option>
+    <option value="dana">DANA</option>
+              </select>
+
+                <input id="namaPiutang"
+                    placeholder="Nama orang yang meminjam"
+                    required>
+
+                <input id="jumlahPiutang"
+                    type="number"
+                    min="1"
+                    placeholder="Jumlah piutang"
+                    required>
+
+                <input id="ketPiutang"
+                    placeholder="Keterangan">
+
+                <button type="submit" class="submit-btn">
+                    SIMPAN PIUTANG
+                </button>
+
+            </form>
+
+          <h3>Daftar Piutang Saya</h3>
+<div id="daftarPiutang">
+    Belum ada piutang.
+</div>
+          
+          <!-- RIWAYAT PEMBAYARAN -->
+<div class="riwayat-pembayaran-section">
+
+    <h3>Riwayat Pembayaran</h3>
+
+    <div id="riwayatPembayaran">
+        Belum ada riwayat pembayaran.
+    </div>
+
+</div>
+
+        </section>
+
+        <!-- RIWAYAT -->
+        <section id="riwayat" class="panel">
+
+            <h2>Riwayat Transaksi</h2>
+
+            <div id="daftarRiwayat">
+                Belum ada transaksi.
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="dashboard.js"></script>
+
+  <!-- MODAL PEMBAYARAN -->
+<div id="modalPembayaran" class="modal-pembayaran">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <h2 id="judulPembayaran">Pembayaran</h2>
+            <button type="button" id="tutupModal">&times;</button>
+        </div>
+
+        <p id="namaTagihan">Nama</p>
+
+        <div class="info-tagihan">
+            <span>Sisa Tagihan</span>
+            <h2 id="sisaTagihan">Rp0</h2>
+        </div>
+
+        <form id="formPembayaran">
+
+            <label>Jumlah Pembayaran</label>
+            <input
+                type="number"
+                id="jumlahPembayaran"
+                min="1"
+                placeholder="Masukkan nominal"
+                required
+            >
+
+            <label>Metode Pembayaran</label>
+            <select id="metodePembayaran" required>
+                <option value="cash">Cash</option>
+                <option value="dana">DANA</option>
+            </select>
+
+            <div class="modal-actions">
+                <button type="button" id="batalPembayaran">
+                    BATAL
+                </button>
+
+                <button type="submit">
+                    KONFIRMASI
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+  
+</body>
+</html>

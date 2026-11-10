@@ -1,0 +1,124 @@
+  
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    min-height: 100vh;
+    padding: 35px 20px;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(5, 3, 15, 0.96),
+            rgba(20, 5, 45, 0.88)
+        ),
+        url("gojo.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* JUDUL */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #c9a0ff;
+    text-shadow: 0 0 15px #8a2be2;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 35px;
+    color: white;
+}
+
+/* LABEL */
+label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #d7baff;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 22px;
+    border: 1px solid #873cff;
+    border-radius: 10px;
+    background: rgba(15, 10, 30, 0.9);
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #c084ff;
+    box-shadow: 0 0 12px #873cff;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* LOGIN BUTTON */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #6515c5,
+        #a855f7
+    );
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #7026bb;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* PEMISAH */
+p {
+    text-align: center;
+    margin: 25px 0;
+    color: #c9a0ff;
+    font-size: 16px;
+}
+
+/* GOOGLE BUTTON */
+button[type="button"] {
+    background: rgba(20, 15, 35, 0.9);
+    border: 1px solid #873cff;
+    box-shadow: 0 0 10px #7026bb;
+    color: white;
+}
+
+/* GOOGLE IMAGE */
+button img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* FOOTER */
+body > p:last-of-type {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 35px;
+}

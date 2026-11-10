@@ -1,0 +1,474 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #071426;
+    color: white;
+}
+
+.navbar {
+    background: #102747;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.account-logo {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #1684e8;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.account h3 {
+    font-size: 15px;
+}
+
+.account p {
+    font-size: 11px;
+    color: #a9c4e4;
+    margin-top: 4px;
+}
+
+.menu-btn {
+    font-size: 27px;
+    color: white;
+    background: none;
+    border: none;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.subtitle {
+    color: #91a9c7;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 16px;
+    border-radius: 13px;
+    background: #102747;
+}
+
+.card span {
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 12px;
+    color: #b5c9e3;
+    margin: 10px 0;
+}
+
+.card h3 {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.card small {
+    display: block;
+    color: #b5c9e3;
+    margin-top: 8px;
+    font-size: 10px;
+}
+
+.income {
+    border-left: 4px solid #28cf85;
+}
+
+.expense {
+    border-left: 4px solid #ff6262;
+}
+
+.dana {
+    border-left: 4px solid #42a5ff;
+}
+
+.total-saldo {
+    background: linear-gradient(135deg, #15549b, #102747);
+    padding: 22px;
+    border-radius: 15px;
+    margin: 20px 0 30px;
+}
+
+.total-saldo p {
+    color: #b9d8fa;
+    font-size: 13px;
+}
+
+.total-saldo h1 {
+    font-size: 29px;
+    margin: 12px 0 20px;
+    overflow-wrap: anywhere;
+}
+
+.saldo-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.saldo-detail small {
+    color: #b9d8fa;
+}
+
+.saldo-detail h3 {
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.panel {
+    background: #102747;
+    padding: 18px;
+    border-radius: 13px;
+    margin: 20px 0;
+}
+
+.panel h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 13px;
+    color: #b9d8fa;
+}
+
+input, select {
+    padding: 13px;
+    border: 1px solid #345579;
+    background: #071a31;
+    color: white;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1684e8;
+    color: white;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100%;
+    background: #102747;
+    z-index: 20;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    transition: 0.3s;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #345579;
+}
+
+#closeMenu {
+    align-self: flex-end;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 22px;
+}
+
+.logout {
+    background: #d93636;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+}
+
+#daftarRiwayat {
+    color: #b9c9dc;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+@media (max-width: 350px) {
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+}
+
+/* KARTU UTANG DAN PIUTANG */
+.tagihan-card {
+    background: linear-gradient(135deg, #102b4e, #081a30);
+    border: 1px solid #244d78;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tagihan-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tagihan-card p {
+    color: #a9c5e5;
+    margin: 8px 0;
+}
+
+.tagihan-card small {
+    display: inline-block;
+    color: #58c7ff;
+    background: #12385d;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.tagihan-card button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 14px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0878e8, #00a6ff);
+    cursor: pointer;
+}
+
+.tagihan-card button:active {
+    transform: scale(0.98);
+}
+
+/* MODAL PEMBAYARAN */
+.modal-pembayaran {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(145deg, #102b4e, #07182d);
+    border: 1px solid #28517b;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    animation: modalMasuk 0.25s ease;
+}
+
+@keyframes modalMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    color: white;
+    font-size: 20px;
+}
+
+.modal-header button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#namaTagihan {
+    color: #b8d2ee;
+    margin-bottom: 15px;
+}
+
+.info-tagihan {
+    background: #0b2039;
+    border: 1px solid #28517b;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.info-tagihan span {
+    color: #9bb8d8;
+    font-size: 13px;
+}
+
+.info-tagihan h2 {
+    color: #35b8ff;
+    margin-top: 7px;
+    font-size: 24px;
+}
+
+#formPembayaran label {
+    display: block;
+    color: white;
+    margin: 12px 0 7px;
+    font-size: 14px;
+}
+
+#formPembayaran input,
+#formPembayaran select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #31577f;
+    outline: none;
+    background: #0b2039;
+    color: white;
+    font-size: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#batalPembayaran {
+    background: #34465c;
+}
+
+.modal-actions button[type="submit"] {
+    background: linear-gradient(90deg, #0878e8, #00a6ff);
+}
+
+/* RIWAYAT PEMBAYARAN */
+.riwayat-pembayaran-section {
+    margin-top: 25px;
+}
+
+.riwayat-pembayaran-section h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.riwayat-card {
+    background: linear-gradient(135deg, #102b4e, #081a30);
+    border: 1px solid #244d78;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.riwayat-card .riwayat-judul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.riwayat-card .riwayat-nominal {
+    color: #35b8ff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.riwayat-card small {
+    display: block;
+    color: #a9c5e5;
+    margin-top: 6px;
+}
+
+.riwayat-badge {
+    background: #12385d;
+    color: #58c7ff;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+}

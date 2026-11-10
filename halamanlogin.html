@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANBOY STORE</title>
+    <link rel="stylesheet" href="halamanlogin.css">
+</head>
+<body>
+
+    <h1>SANBOY STORE</h1>
+    <h3>Login Akun</h3>
+
+    <form id="loginForm">
+      
+        <label>Nama Lengkap</label><br>
+        <input type="text" id="nama"
+        placeholder="Masukkan Nama Lengkap">
+      
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" id="email"
+        placeholder="Masukkan Email" required>
+
+        <br><br>
+
+        <label>Password</label><br>
+        <input type="password" id="password"
+        placeholder="Masukkan Password" required>
+
+        <br><br>
+
+        <button type="submit">LOGIN</button>
+
+        <button type="button" id="registerBtn">
+            REGISTER
+        </button>
+
+    </form>
+
+    <p id="pesan"></p>
+
+    <button type="button" id="logoutBtn" hidden>
+        LOGOUT
+    </button>
+
+    <p>© 2026 SANBOY STORE</p>
+
+    <script type="module">
+        import {
+            auth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            updateProfile
+        } from "./firebase.js";
+       
+        const nama = document.getElementById("nama");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const pesan = document.getElementById("pesan");
+
+        // REGISTER
+        document.getElementById("registerBtn")
+        .addEventListener("click", async () => {
+            try {
+                const hasil = await createUserWithEmailAndPassword(
+    auth,
+    email.value,
+    password.value
+);
+
+await updateProfile(hasil.user, {
+    displayName: nama.value.trim()
+});
+
+                pesan.textContent = "Akun berhasil dibuat!";
+            } catch (error) {
+                pesan.textContent = error.message;
+            }
+        });
+
+        // LOGIN
+document.getElementById("loginForm")
+.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+        await signInWithEmailAndPassword(
+            auth,
+            email.value,
+            password.value
+        );
+
+        pesan.textContent = "Login berhasil!";
+
+        window.location.href = "dashboard.html";
+
+    } catch (error) {
+        pesan.textContent = error.message;
+    }
+});
+
+        // LOGOUT
+        document.getElementById("logoutBtn")
+        .addEventListener("click", async () => {
+            try {
+                await signOut(auth);
+                pesan.textContent = "Berhasil logout!";
+                document.getElementById("logoutBtn").hidden = true;
+            } catch (error) {
+                pesan.textContent = error.message;
+            }
+        });
+    </script>
+
+</body>
+</html>
